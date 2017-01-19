@@ -1,5 +1,15 @@
 # Wordpress
 
+## Example
+
+``` shell
+docker build -t mod-wp .
+docker run --name some-mysql -e MYSQL_ROOT_PASSWORD=mysecretpassword -d mysql
+docker run --name some-wordpress --link some-mysql:mysql -d -p 80 mod-wp
+```
+
+## Details
+
  - php7.1
  - apache2
  - wordpress plugins:
