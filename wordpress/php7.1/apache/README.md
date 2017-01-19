@@ -1,5 +1,13 @@
 # Wordpress
 
+## Docker Hub
+
+
+Hub: [dpcrook/idcrook-wordpress](https://hub.docker.com/r/dpcrook/idcrook-wordpress/)
+
+ - `docker pull dpcrook/idcrook-wordpress`
+
+
 ## Example
 
 ``` shell
