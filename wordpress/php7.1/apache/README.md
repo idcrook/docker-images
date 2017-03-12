@@ -14,6 +14,14 @@ Hub: [dpcrook/idcrook-wordpress](https://hub.docker.com/r/dpcrook/idcrook-wordpr
 docker build -t mod-wp .
 docker run --name some-mysql -e MYSQL_ROOT_PASSWORD=mysecretpassword -d mysql
 docker run --name some-wordpress --link some-mysql:mysql -d -p 80 mod-wp
+open http://0.0.0.0:32768
+```
+
+#### publish to docker hub
+
+``` shell
+docker tag mod-wp dpcrook/idcrook-wordpress
+docker push dpcrook/idcrook-wordpress
 ```
 
 ## Details
