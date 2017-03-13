@@ -15,7 +15,7 @@ docker run -d -p 8080:8080 -p 80:80 \
 
 docker run -d -p 8080:8080 -p 80:80 \
     -v $PWD/traefik.toml:/etc/traefik/traefik.toml \
-	dpcrook/traefik-linux:`uname -m`
+	dpcrook/traefik-linux:`dpkg --print-architecture`
 ```
 
 
@@ -31,9 +31,10 @@ Hub: [dpcrook/traefik-linux](https://hub.docker.com/r/dpcrook/traefik-linux/)
 ``` shell
 git clone https://github.com/idcrook/docker-images.git
 cd docker-images/traefik-linux
+dpkg --print-architecture
 ```
 
-On Raspbian (ARM7 32-bit), Raspberry Pi 3 with Docker installed:
+On Raspbian (ARMV7l 32-bit), Raspberry Pi 3 with Docker installed:
 
 ``` shell
 docker build -t armhf -f Dockerfile.armhf .
@@ -43,20 +44,18 @@ On Raspberry Pi Models 2 and 3 running Raspbian, `uname -m` is `armv7l`
 
 On Raspberry Pi Models 1 B running Raspbian, `uname -m` is `armv6l`
 
-`armhf` has the `hf` where it stands for "Hardware Floating-point", a legacy
-same arising from the earliest system architectures on the Pi were released
-without the FP hardware enabled.
+`armhf` has `hf` which stands for "Hardware Floating-point", a legacy
+thing arising from the earliest system architectures on the Pi were released without the FP hardware enabled.
 
 
 
-On Pine 64 Ubuntu (aarch64) with Docker installed:
+On Pine 64 Ubuntu (ARMV8 64-bit) with Docker installed:
 
 ``` shell
-docker build -t aarch64 -f Dockerfile.aarch64 .
+docker build -t arm64 -f Dockerfile.arm64 .
 ```
 
 On Pine A64, `uname -m` is `aarch64`
-
 
 #### publish to docker hub
 
@@ -70,6 +69,6 @@ docker push dpcrook/traefik-linux:armhf
 ```
 
 ``` shell
-docker tag aarch64 dpcrook/traefik-linux:aarch64
-docker push dpcrook/traefik-linux:aarch64
+docker tag arm64 dpcrook/traefik-linux:arm64
+docker push dpcrook/traefik-linux:arm64
 ```
