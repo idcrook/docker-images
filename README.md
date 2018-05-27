@@ -14,5 +14,4 @@ See these in directories below
 Other repositories (not in this one)
 
  - phant https://github.com/idcrook/phant ([DockerHub](https://hub.docker.com/r/dpcrook/phant_server-docker/))
- - Hexo (blogging) https://github.com/idcrook/alpine-hexo ([DockerHub](https://hub.docker.com/r/dpcrook/alpine-hexo-docker/))
  - lighttpd https://github.com/idcrook/alpine-lighttpd-static ([DockerHub](https://hub.docker.com/r/dpcrook/alpine-lighttpd-static/))
